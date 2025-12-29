@@ -1,7 +1,7 @@
 import { ShieldCheck, Award, Users, Clock } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
-import certificateImg from 'figma:asset/54cf81ba42112c783fbf292a7591616897aae93f.png';
+
 
 export function About() {
   const [showCertificate, setShowCertificate] = useState(false);
