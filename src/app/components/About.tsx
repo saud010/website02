@@ -76,11 +76,7 @@ export function About() {
 
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl transform rotate-3 opacity-20"></div>
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1560264418-c4445382edbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlJTIwdGVhbXxlbnwxfHx8fDE3NjcwMjgwMzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Unser professionelles Team"
-              className="relative rounded-2xl shadow-xl w-full h-[500px] object-cover"
-            />
+           
           </div>
         </div>
 
