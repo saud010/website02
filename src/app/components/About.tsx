@@ -1,5 +1,4 @@
 import { ShieldCheck, Award, Users, Clock } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 
 
