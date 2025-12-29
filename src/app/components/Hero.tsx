@@ -68,11 +68,7 @@ export function Hero() {
           <div className="hidden md:block">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl transform rotate-3"></div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/flagged/photo-1564767609213-c75ee685263a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2Nrc21pdGglMjBrZXlzJTIwZG9vcnxlbnwxfHx8fDE3NjcwMjgwMzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Professioneller Schlüsseldienst Pinneberg"
-                className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
-              />
+             
             </div>
           </div>
         </div>
