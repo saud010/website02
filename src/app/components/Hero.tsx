@@ -1,5 +1,5 @@
 import { Phone, Clock, ShieldCheck } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+
 
 export function Hero() {
   return (
