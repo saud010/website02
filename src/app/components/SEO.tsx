@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export function SEO() {
   useEffect(() => {
-    // Set page title
+    // Page title
     document.title =
       'Schlüsseldienst Kreis Pinneberg ⭐ 24/7 Notdienst | Türöffnung ab 79€';
 
@@ -61,12 +61,14 @@ export function SEO() {
     document.documentElement.lang = 'de';
 
     // JSON-LD structured data
+    const url = window.location.href; // use current page URL
     const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'LocksmithService',
+      '@id': url, // Unique identifier for Google
       name: 'Notschlüsseldienst Kreis Pinneberg',
       image: 'https://images.unsplash.com/flagged/photo-1564767609213-c75ee685263a',
-      url: window.location.href,
+      url: url,
       telephone: '+4915780914217',
       email: 'issaxd1@gmail.com',
       address: {
