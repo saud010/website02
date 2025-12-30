@@ -1,1 +1,13 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "notschluesseldienst-pinneberg.de" }
+      ],
+      "destination": "https://www.notschluesseldienst-pinneberg.de/$1",
+      "permanent": true
+    }
+  ]
+}
 
