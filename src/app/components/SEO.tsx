@@ -61,7 +61,7 @@ export function SEO() {
     document.documentElement.lang = 'de';
   }, []);
 
-  // Static JSON-LD component
+  // Static JSON-LD structured data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocksmithService",
