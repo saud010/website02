@@ -61,11 +61,11 @@ export function SEO() {
     document.documentElement.lang = 'de';
 
     // JSON-LD structured data
-    const url = window.location.href; // use current page URL
+    const url = window.location.href;
     const structuredData = {
       '@context': 'https://schema.org',
       '@type': 'LocksmithService',
-      '@id': url, // Unique identifier for Google
+      '@id': url,
       name: 'Notschlüsseldienst Kreis Pinneberg',
       image: 'https://images.unsplash.com/flagged/photo-1564767609213-c75ee685263a',
       url: url,
@@ -98,8 +98,16 @@ export function SEO() {
         reviewCount: '500'
       },
       areaServed: [
-        'Pinneberg', 'Elmshorn', 'Wedel', 'Quickborn', 'Schenefeld',
-        'Uetersen', 'Rellingen', 'Halstenbek', 'Barmstedt', 'Tornesch'
+        { '@type': 'AdministrativeArea', name: 'Pinneberg' },
+        { '@type': 'AdministrativeArea', name: 'Elmshorn' },
+        { '@type': 'AdministrativeArea', name: 'Wedel' },
+        { '@type': 'AdministrativeArea', name: 'Quickborn' },
+        { '@type': 'AdministrativeArea', name: 'Schenefeld' },
+        { '@type': 'AdministrativeArea', name: 'Uetersen' },
+        { '@type': 'AdministrativeArea', name: 'Rellingen' },
+        { '@type': 'AdministrativeArea', name: 'Halstenbek' },
+        { '@type': 'AdministrativeArea', name: 'Barmstedt' },
+        { '@type': 'AdministrativeArea', name: 'Tornesch' }
       ],
       serviceType: [
         'Türöffnung', 'Schlosswechsel', 'Notöffnung', 'Schließanlagen', 'Sicherheitstechnik'
