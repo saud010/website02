@@ -28,7 +28,7 @@ export function SEO() {
     }
     metaKeywords.content = keywordsContent;
 
-    // Open Graph
+    // Open Graph tags
     const ogTags = [
       { property: 'og:title', content: 'Schlüsseldienst Kreis Pinneberg - 24/7 Notdienst' },
       {
@@ -59,69 +59,50 @@ export function SEO() {
 
     // Set language
     document.documentElement.lang = 'de';
-
-    // JSON-LD structured data
-    const url = window.location.href;
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'LocksmithService',
-      '@id': url,
-      name: 'Notschlüsseldienst Kreis Pinneberg',
-      image: 'https://images.unsplash.com/flagged/photo-1564767609213-c75ee685263a',
-      url: url,
-      telephone: '+4915780914217',
-      email: 'issaxd1@gmail.com',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Pinneberg',
-        addressRegion: 'Schleswig-Holstein',
-        addressCountry: 'DE'
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 53.6558,
-        longitude: 9.7987
-      },
-      openingHoursSpecification: [
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '00:00', closes: '23:59' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday', opens: '00:00', closes: '23:59' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '00:00', closes: '23:59' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '00:00', closes: '23:59' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '00:00', closes: '23:59' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '00:00', closes: '23:59' },
-        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '00:00', closes: '23:59' }
-      ],
-      priceRange: '€€',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '500'
-      },
-      areaServed: [
-        { '@type': 'AdministrativeArea', name: 'Pinneberg' },
-        { '@type': 'AdministrativeArea', name: 'Elmshorn' },
-        { '@type': 'AdministrativeArea', name: 'Wedel' },
-        { '@type': 'AdministrativeArea', name: 'Quickborn' },
-        { '@type': 'AdministrativeArea', name: 'Schenefeld' },
-        { '@type': 'AdministrativeArea', name: 'Uetersen' },
-        { '@type': 'AdministrativeArea', name: 'Rellingen' },
-        { '@type': 'AdministrativeArea', name: 'Halstenbek' },
-        { '@type': 'AdministrativeArea', name: 'Barmstedt' },
-        { '@type': 'AdministrativeArea', name: 'Tornesch' }
-      ],
-      serviceType: [
-        'Türöffnung', 'Schlosswechsel', 'Notöffnung', 'Schließanlagen', 'Sicherheitstechnik'
-      ]
-    };
-
-    let script = document.querySelector('script[type="application/ld+json"]');
-    if (!script) {
-      script = document.createElement('script');
-      script.type = 'application/ld+json';
-      document.head.appendChild(script);
-    }
-    script.textContent = JSON.stringify(structuredData);
   }, []);
 
-  return null;
+  // Static JSON-LD component
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocksmithService",
+    "@id": "https://www.notschluesseldienst-pinneberg.de/",
+    name: "Notschlüsseldienst Kreis Pinneberg",
+    url: "https://www.notschluesseldienst-pinneberg.de/",
+    telephone: "+4915780914217",
+    email: "issaxd1@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pinneberg",
+      addressRegion: "Schleswig-Holstein",
+      addressCountry: "DE"
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 53.6558,
+      longitude: 9.7987
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+      ],
+      opens: "00:00",
+      closes: "23:59"
+    },
+    priceRange: "€€",
+    areaServed: [
+      "Pinneberg","Elmshorn","Wedel","Quickborn","Schenefeld",
+      "Uetersen","Rellingen","Halstenbek","Barmstedt","Tornesch"
+    ],
+    serviceType: [
+      "Türöffnung","Schlosswechsel","Notöffnung","Schließanlagen","Sicherheitstechnik"
+    ]
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
 }
